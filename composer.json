@@ -1,7 +1,7 @@
 {
   "name": "kossa/algerian-cities",
-  "description": "",
-  "keywords": ["Laravel"],
+  "description": "A Laravel package to create/load wilayas and communes of Algeria",
+  "keywords": ["Laravel", "Wilaya", "Algeria", "Commune", "Cities"],
   "authors": [
     {
       "name": "kouceyla",
@@ -22,7 +22,10 @@
   "autoload": {
     "psr-4": {
       "Kossa\\AlgerianCities\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
@@ -39,5 +42,7 @@
   "scripts": {
     "test": "vendor/bin/phpunit -c ./phpunit.xml --colors=always",
     "analysis": "vendor/bin/phpstan analyse"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
