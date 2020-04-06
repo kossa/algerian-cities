@@ -40,6 +40,9 @@
     }
   },
   "scripts": {
+    "post-install-cmd": [
+        "Kossa\\AlgerianCities\\Console\\Commands\\AlgerianCitiesCommand::handle"
+    ],
     "test": "vendor/bin/phpunit -c ./phpunit.xml --colors=always",
     "analysis": "vendor/bin/phpstan analyse"
   },
