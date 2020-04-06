@@ -40,6 +40,11 @@ class AlgerianCitiesCommand extends Command
      */
     public function handle()
     {
+        // Publish verndor
+        Artisan::call('vendor:publish' ,["--provider"=>"Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider"]);
+        
+        
+        // Check if table exist
         if(! Schema::hasTable('wilayas') || ! Schema::hasTable('communes')){
             if($this->confirm('Wilayas/Communes tables does not exist, Do you want to run migration', true)){
                 Artisan::call('migrate');

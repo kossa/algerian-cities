@@ -4,8 +4,9 @@ A Laravel package to create/load wilayas and communes of Algeria
 
 ## Installation
 
-```
+```sh
 composer require kossa/algerian-cities
+php artisan algerian-cities:install
 ```
 
 ## Using this package
