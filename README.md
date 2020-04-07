@@ -27,7 +27,7 @@ class AnyClass extends Model
 }
 ```
 
-### Helpers
+### Via helpers
 There is multiple helper functions like :
 
 ```php
@@ -38,7 +38,6 @@ $communes = communes(16);  // get all communes of Algiers(16) as $id => $name
  
 
 ### Blade/Views
-There is multiple helper functions for your views
 
 ```php
 // wilayas
