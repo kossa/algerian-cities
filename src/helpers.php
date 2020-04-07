@@ -37,14 +37,14 @@ if (! function_exists('wilayas')) {
     }
 }
 
-if (! function_exists('wilayas_ar')) {
+if (! function_exists('arabic_wilayas')) {
     /**
      * Get wilayas list in arabic
      *
      * @return array
      */
-    function wilayas_ar(): array
+    function arabic_wilayas(): array
     {
-        return \Kossa\AlgerianCities\wilaya::pluck('name_ar', 'id')->toArray();
+        return \Kossa\AlgerianCities\wilaya::pluck('arabic_name', 'id')->toArray();
     }
 }

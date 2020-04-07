@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wilaya extends Model
 {
-    protected $fillable = ['name', 'name_ar'];
+    protected $fillable = ['name', 'arabic_name'];
 
     /*
     |------------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ class Wilaya extends Model
     {
         $common = [
             'name'    => 'required',
-            'name_ar'    => 'required',
+            'arabic_name'    => 'required',
         ];
 
         return $common;
