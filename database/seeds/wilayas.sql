@@ -1,4 +1,4 @@
-INSERT INTO `wilayas` (`id`, `name`, `name_ar`) VALUES
+INSERT INTO `wilayas` (`id`, `name`, `arabic_name`) VALUES
 (1, 'Adrar', 'أدرار'),
 (2, 'Chlef', 'الشلف'),
 (3, 'Laghouat', 'الأغواط'),
