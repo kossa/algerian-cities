@@ -31,9 +31,10 @@ class AnyClass extends Model
 There is multiple helper functions like :
 
 ```php
-$wilayas  = wilayas();     // get all wilayas as $id => $name
-$communes = communes();    // get all communes as $id => $name
-$communes = communes(16);  // get all communes of Algiers(16) as $id => $name
+$wilayas     = wilayas();     // get all wilayas as $id => $name
+$wilayas_ar  = wilayas_ar();  // get all wilayas in arabic as $id => $name_ar
+$communes    = communes();    // get all communes as $id => $name
+$communes    = communes(16);  // get all communes of Algiers(16) as $id => $name
 ```
  
 

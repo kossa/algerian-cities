@@ -16,6 +16,7 @@ class CreateCitiesTable extends Migration
         Schema::create('wilayas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('name_ar');
             $table->timestamps();
         });
 

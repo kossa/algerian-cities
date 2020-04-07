@@ -4,7 +4,7 @@ use Kossa\AlgerianCities\Wilaya;
 
 if (! function_exists('communes')) {
     /**
-     * Get commune list
+     * Get communes list
      *
      * @param integer wilaya_id
      * @return array
@@ -27,12 +27,24 @@ if (! function_exists('communes')) {
 
 if (! function_exists('wilayas')) {
     /**
-     * Get commune list
+     * Get wilayas list
      *
      * @return array
      */
     function wilayas() : array
     {
         return \Kossa\AlgerianCities\wilaya::pluck('name', 'id')->toArray();
+    }
+}
+
+if (! function_exists('wilayas_ar')) {
+    /**
+     * Get wilayas list in arabic
+     *
+     * @return array
+     */
+    function wilayas_ar(): array
+    {
+        return \Kossa\AlgerianCities\wilaya::pluck('name_ar', 'id')->toArray();
     }
 }
