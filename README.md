@@ -1,6 +1,6 @@
 # Algerian Cities
 
-A Laravel package to create/load wilayas and communes of Algeria
+A Laravel package to create/load wilayas and communes of Algeria in Arabic and French language, included zip code and latitude/longitude of communes
 
 ## Installation
 
@@ -11,6 +11,7 @@ php artisan algerian-cities:install
 
 ## Using this package
 ### Basic usage
+There is two model `Wilaya` that has many `Commune`, import and use them like any model
 
 ```php
 namespace App;
@@ -31,15 +32,25 @@ class AnyClass extends Model
 There is multiple helper functions like :
 
 ```php
-$wilayas  = wilayas();     // get all wilayas as $id => $name
-$communes = communes();    // get all communes as $id => $name
-$communes = communes(16);  // get all communes of Algiers(16) as $id => $name
+$wilayas  = wilayas();                                                // get all wilayas as $id => $name
+$wilayas  = wilayas('arabic_name');                                   // get all wilayas in arabic
+$communes = communes();                                               // get all communes as $id => $name
+$communes = communes(16);                                             // get all communes of Algiers(16) as $id => $name
+$communes = communes(16, $withWilaya = true);                         // get all communes of Algiers(16) with name of wilayas like : Alger Centre, Alger
+$communes = communes(16, $withWilaya = true, $name = "arabic_name");  // get all communes of Algiers(16) with name of wilayas in arabic like : الجزائر الوسطى, الجزائر
+
+$single_commune = commune(1); // get a single commune model
+$single_commune = commune(1, $withWilaya = true); // get a single commune model include wilaya
+$single_wilaya = wilaya(1); // get a single wilaya
 ```
  
 
 ### Blade/Views
 
+You can use any helper/model above and use it in select 
+
 ```php
+
 // wilayas
 <select>
     @foreach (wilayas() as $id => $wilaya)
@@ -54,16 +65,23 @@ $communes = communes(16);  // get all communes of Algiers(16) as $id => $name
     @endforeach
 </select>
 
-// communes of Algiers
+// communes of Algiers(16)
 <select>
-    @foreach (communes(16) as $id => $commune)
+    @foreach (communes($wilaya_id = 16) as $id => $commune)
         <option value="{{ $id }}">{{ $commune }}</option>
     @endforeach
 </select>
 
-// communes with wilaya name : Dar El Beida, Alger
+// communes with wilaya name : Adrar, Adrar ...
 <select>
-    @foreach (communes(null, true) as $id => $commune)
+    @foreach (communes($wilaya_id = null, $withWilaya = true) as $id => $commune)
+        <option value="{{ $id }}">{{ $commune }}</option>
+    @endforeach
+</select>
+
+// communes with wilaya name in arabic : أدرار, أدرار ...
+<select>
+    @foreach (communes($wilaya_id = null, $withWilaya = true, 'arabic_name') as $id => $commune)
         <option value="{{ $id }}">{{ $commune }}</option>
     @endforeach
 </select>
@@ -78,4 +96,4 @@ All contributions are welcome, please follow :
 
 
 ## Credits
-The list of wilayas/communes are collected from [algeria-cities](https://github.com/othmanus/algeria-cities)
+The list of wilayas/communes are collected from [Wilaya-Of-Algeria](https://github.com/bahinapster/Wilaya-Of-Algeria/)

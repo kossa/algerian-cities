@@ -16,14 +16,20 @@ class CreateCitiesTable extends Migration
         Schema::create('wilayas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('arabic_name');
+            $table->decimal('longitude', 9, 6);
+            $table->decimal('latitude', 9, 6);
             $table->timestamps();
         });
 
         Schema::create('communes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('arabic_name');
+            $table->string('post_code');
             $table->unsignedInteger('wilaya_id');
-            $table->string('zip_code')->nullable();
+            $table->decimal('longitude', 9, 6);
+            $table->decimal('latitude', 9, 6);
             $table->timestamps();
 
             $table->foreign('wilaya_id')->references('id')->on('wilayas')->onDelete('cascade');

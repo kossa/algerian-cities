@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commune extends Model
 {
-    protected $guarded = ['id'];
+    protected $fillable = ['name', 'arabic_name', 'post_code', 'wilaya_id', 'longitude', 'latitude', ];
     
-    protected $appends = ['wilaya_name'];
-
     /*
     |------------------------------------------------------------------------------------
     | Validations
@@ -30,10 +28,10 @@ class Commune extends Model
     | Relations
     |------------------------------------------------------------------------------------
     */
-    public function scopeWithWilaya($q)
+    public function scopeWithWilaya($q, $name="name")
     {
         $q->leftJoin('wilayas', 'wilayas.id', 'communes.wilaya_id')
-            ->select('communes.id', \DB::raw("concat(communes.name, ', ', wilayas.name) as name"));
+            ->select('communes.id', \DB::raw("concat(communes.$name, ', ', wilayas.$name) as name"));
     }
     public function wilaya()
     {

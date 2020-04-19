@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wilaya extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude', ];
 
     /*
     |------------------------------------------------------------------------------------

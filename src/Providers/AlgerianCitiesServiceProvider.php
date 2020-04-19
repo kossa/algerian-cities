@@ -15,12 +15,14 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
     {
         // Migrations
         $this->publishes([
-            __DIR__.'/../../database/migrations/create_cities_table.php.stub' => database_path('migrations') . '/' . $this->getMigrationFileName('create_cities_table.php'),
+            __DIR__.'/../../database/migrations/create_cities_table.php.stub' =>
+                database_path('migrations') . '/' . $this->getMigrationFileName('create_cities_table.php'),
+                    
         ], 'migrations');
 
         // Seeds
         $this->publishes([
-            __DIR__.'/../../database/seeds/' => database_path('seeds/sql'),
+            __DIR__.'/../../database/seeds/' => database_path('seeds/json'),
         ], 'seeds');
         
         // Commande
