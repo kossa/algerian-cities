@@ -39,9 +39,9 @@ $communes = communes(16);                                             // get all
 $communes = communes(16, $withWilaya = true);                         // get all communes of Algiers(16) with name of wilayas like : Alger Centre, Alger
 $communes = communes(16, $withWilaya = true, $name = "arabic_name");  // get all communes of Algiers(16) with name of wilayas in arabic like : الجزائر الوسطى, الجزائر
 
-$single_commune = commune(1); // get a single commune model
-$single_commune = commune(1, $withWilaya = true); // get a single commune model include wilaya
-$single_wilaya = wilaya(1); // get a single wilaya
+$single_commune = commune(1);                      // get a single commune model
+$single_commune = commune(1, $withWilaya = true);  // get a single commune model include wilaya
+$single_wilaya  = wilaya(1);                       // get a single wilaya
 ```
  
 
