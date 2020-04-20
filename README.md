@@ -88,6 +88,21 @@ You can use any helper/model above and use it in select
 
 ```
 
+## Use package as API
+This package include api.php route to use the api, here is the url for :
+
+verbs | URI | Description
+----- | --- | -----------
+Get | /api/wilayas | Get all wilayas
+Get | /api/wilayas/:id | Get a specific wilaya by id
+Get | /api/wilayas/:id/communes | Get all communes from a specific wilaya by id
+Get | /api/communes | Get all communes
+Get | /api/communes/:id | Get a specific commune by id
+Get | /api/search/wilaya/:q | Search wilayas by name, arabic name
+Get | /api/search/commune/:q | Search communes by name, arabic name
+----------
+
+
 ## Contribution
 All contributions are welcome, please follow :
 1. [PSR-2](https://www.php-fig.org/psr/psr-2/) Coding Standard

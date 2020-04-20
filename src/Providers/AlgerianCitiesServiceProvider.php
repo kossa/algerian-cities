@@ -31,6 +31,9 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
                 \Kossa\AlgerianCities\Console\Commands\AlgerianCitiesCommand::class,
             ]);
         }
+
+        // API
+        $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
         
         require __DIR__ . '/../helpers.php';
     }
