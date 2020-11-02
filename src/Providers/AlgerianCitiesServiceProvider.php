@@ -22,7 +22,7 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
 
         // Seeds
         $this->publishes([
-            __DIR__.'/../../database/seeds/' => database_path('seeds/json'),
+            __DIR__.'/../../database/seeders/' => database_path('seeders'),
         ], 'seeds');
         
         // Commande
