@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use DB;
-use Schema;
-use Artisan;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Artisan;
+use ErrorException;
 class WilayaCommuneSeeder extends Seeder
 {
     /**
@@ -44,8 +44,11 @@ class WilayaCommuneSeeder extends Seeder
     protected function insertWilayas()
     {
         // Load wilayas from json
-        $wilayas_json = json_decode(file_get_contents(database_path('seeders/json/Wilaya_Of_Algeria.json')));
-
+        try {
+            $wilayas_json = json_decode(file_get_contents(database_path('/seeders/json/Wilaya_Of_Algeria.json')));
+        } catch(ErrorException $e) {
+            $wilayas_json = json_decode(file_get_contents(__DIR__ .'/json/Wilaya_Of_Algeria.json'));
+        }
         // Insert Wilayas
         $data = [];
         foreach ($wilayas_json as $wilaya) {
@@ -64,8 +67,11 @@ class WilayaCommuneSeeder extends Seeder
     protected function insertCommunes()
     {
         // Load wilayas from json
-        $communes_json = json_decode(file_get_contents(database_path('seeders/json/Commune_Of_Algeria.json')));
-
+        try {
+            $communes_json = json_decode(file_get_contents(database_path('/seeders/json/Commune_Of_Algeria.json')));
+        } catch(ErrorException $e) {
+            $communes_json = json_decode(file_get_contents(__DIR__ .'/json/Commune_Of_Algeria.json'));
+        }
         // Insert communes
         $data = [];
         foreach ($communes_json as $commune) {

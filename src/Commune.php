@@ -3,6 +3,7 @@
 namespace Kossa\AlgerianCities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Commune extends Model
 {
@@ -31,7 +32,7 @@ class Commune extends Model
     public function scopeWithWilaya($q, $name="name")
     {
         $q->leftJoin('wilayas', 'wilayas.id', 'communes.wilaya_id')
-            ->select('communes.id', \DB::raw("concat(communes.$name, ', ', wilayas.$name) as name"));
+            ->select('communes.id', DB::raw("concat(communes.$name, ', ', wilayas.$name) as name"));
     }
     public function wilaya()
     {
