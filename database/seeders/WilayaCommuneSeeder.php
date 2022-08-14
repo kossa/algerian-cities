@@ -50,7 +50,6 @@ class WilayaCommuneSeeder extends Seeder
         $data = [];
         foreach ($wilayas_json as $wilaya) {
             $data[] = [
-                'id'          => $wilaya->id,
                 'name'        => $wilaya->name,
                 'arabic_name' => $wilaya->ar_name,
                 'longitude'   => $wilaya->longitude,
@@ -70,7 +69,6 @@ class WilayaCommuneSeeder extends Seeder
         $data = [];
         foreach ($communes_json as $commune) {
             $data[] = [
-                'id'          => $commune->id,
                 'name'        => $commune->name,
                 'arabic_name' => $commune->ar_name,
                 'post_code'   => $commune->post_code,
