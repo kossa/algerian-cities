@@ -22,7 +22,8 @@
   "autoload": {
     "psr-4": {
       "Kossa\\AlgerianCities\\": "src/",
-      "Database\\": "database/"
+      "Database\\Migrations\\": "database/migrations/",
+      "Database\\Seeders\\": "database/seeders/"
     },
     "files": [
       "src/helpers.php"

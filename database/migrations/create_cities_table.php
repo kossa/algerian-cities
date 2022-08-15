@@ -1,4 +1,5 @@
 <?php
+namespace Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +15,7 @@ class CreateCitiesTable extends Migration
     public function up()
     {
         if (Schema::hasTable('wilayas') ||  Schema::hasTable('communes')) {
-            return ;
+            return;
         }
 
         Schema::create('wilayas', function (Blueprint $table) {
