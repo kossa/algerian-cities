@@ -9,7 +9,6 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-
     steps:
     - uses: shivammathur/setup-php@v2
       with:
@@ -27,4 +26,6 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit
+      run: |
+        composer dumpautoload
+        vendor/bin/phpunit
