@@ -26,6 +26,4 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: |
-        composer dumpautoload
-        vendor/bin/phpunit
+      run: vendor/bin/phpunit
