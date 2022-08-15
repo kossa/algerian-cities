@@ -14,7 +14,7 @@ class CreateCitiesTable extends Migration
     public function up()
     {
         if (Schema::hasTable('wilayas') ||  Schema::hasTable('communes')) {
-            return ;
+            return;
         }
 
         Schema::create('wilayas', function (Blueprint $table) {
