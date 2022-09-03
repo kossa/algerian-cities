@@ -16,11 +16,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     public function getEnvironmentSetUp($app)
     {
-        // include_once __DIR__ . '/../database/migrations/create_cities_table.php.stub';
+        include_once __DIR__ . '/../database/migrations/create_cities_table.php.stub';
 
-        // // run the migration's up() method
-        // (new \CreateCitiesTable)->up(); 
-        Artisan::call('migrate:fresh');    
+        // run the migration's up() method
+        (new \CreateCitiesTable)->up();
+        
         Artisan::call('db:seed', ['--class' => 'WilayaCommuneSeeder']);
     }
 
