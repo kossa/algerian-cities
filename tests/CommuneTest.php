@@ -2,7 +2,6 @@
 
 use Kossa\AlgerianCities\Commune;
 use Kossa\AlgerianCities\Tests\TestCase;
-use Kossa\AlgerianCities\Wilaya;
 
 final class CommuneTest extends TestCase
 {
