@@ -19,7 +19,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         include_once __DIR__ . '/../database/migrations/create_cities_table.php.stub';
 
         // run the migration's up() method
-        (new \CreateCitiesTable)->up();
+        (new \Database\Migrations\CreateCitiesTable)->up();
         
         Artisan::call('db:seed', ['--class' => 'WilayaCommuneSeeder']);
     }
