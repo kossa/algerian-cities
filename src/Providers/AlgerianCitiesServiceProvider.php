@@ -15,8 +15,8 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
     {
         // Migrations
         $this->publishes([
-            __DIR__.'/../../database/migrations/create_cities_table.php.stub' =>
-                database_path('migrations') . '/' . $this->getMigrationFileName('create_cities_table.php'),
+            __DIR__.'/../../database/migrations/2024_10_26_000000_create_cities_table.php.stub' =>
+                database_path('migrations') . '/2024_10_26_000000_create_cities_table.php',
                     
         ], 'migrations');
 
@@ -54,10 +54,5 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
         // $this->mergeConfigFrom(
         //     __DIR__.'/../../config/algerian-cities.php', 'algerian-cities'
         // );
-    }
-
-    protected function getMigrationFileName($file_name)
-    {
-        return date('Y_m_d_His') . '_' . $file_name;
     }
 }
