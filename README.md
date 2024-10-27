@@ -149,16 +149,17 @@ This package includes `api.php` routes, allowing you to interact with the data t
 - [ ] Add support for additional languages
 - [ ] Add a configuration file to allow customizing package behaviors
 - [ ] Add support for caching to optimize API responses
+- [ ] fix PHPUnit Deprecations
 
 ## Contribution
 
 We welcome all contributions! Please follow these guidelines:
 
-1. Adhere to the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding standard.
-2. Document any changes in behavior — ensure `README.md` and other relevant documentation are updated accordingly.
-3. Submit one pull request per feature — for multiple changes, create separate pull requests.
+1. Document any changes in behavior — ensure `README.md` updated accordingly.
+2. Write tests to cover any new functionality.
+3. Please ensure that your pull request passes all tests.
 
-## Reporting Issues & Suggesting Features
+## Issues & Suggesting Features
 
 If you encounter any issues or have ideas for new features, please [open an issue](https://github.com/kossa/algerian-cities/issues/new). 
 
