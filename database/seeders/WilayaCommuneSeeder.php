@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use ErrorException;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Artisan;
-use ErrorException;
+
 class WilayaCommuneSeeder extends Seeder
 {
     /**
@@ -25,15 +25,15 @@ class WilayaCommuneSeeder extends Seeder
         $wilayas = DB::table('wilayas')->count();
         $communes = DB::table('communes')->count();
 
-        if (!$wilayas && !$communes) {
+        if (! $wilayas && ! $communes) {
             $this->loadData();
-            $this->command->info("Success!! wilayas and communes are loaded successfully");
+            $this->command->info('Success!! wilayas and communes are loaded successfully');
+
             return;
         }
-        
-        $this->command->comment("Wilayas/Communes already loaded");
-    }
 
+        $this->command->comment('Wilayas/Communes already loaded');
+    }
 
     protected function loadData()
     {
@@ -46,18 +46,18 @@ class WilayaCommuneSeeder extends Seeder
         // Load wilayas from json
         try {
             $wilayas_json = json_decode(file_get_contents(database_path('/seeders/json/Wilaya_Of_Algeria.json')));
-        } catch(ErrorException $e) {
-            $wilayas_json = json_decode(file_get_contents(__DIR__ .'/json/Wilaya_Of_Algeria.json'));
+        } catch (ErrorException $e) {
+            $wilayas_json = json_decode(file_get_contents(__DIR__.'/json/Wilaya_Of_Algeria.json'));
         }
         // Insert Wilayas
         $data = [];
         foreach ($wilayas_json as $wilaya) {
             $data[] = [
-                'name'        => $wilaya->name,
+                'name' => $wilaya->name,
                 'arabic_name' => $wilaya->ar_name,
-                'longitude'   => $wilaya->longitude,
-                'latitude'    => $wilaya->latitude,
-                'created_at'  => now(),
+                'longitude' => $wilaya->longitude,
+                'latitude' => $wilaya->latitude,
+                'created_at' => now(),
             ];
         }
         DB::table('wilayas')->insert($data);
@@ -68,20 +68,20 @@ class WilayaCommuneSeeder extends Seeder
         // Load wilayas from json
         try {
             $communes_json = json_decode(file_get_contents(database_path('/seeders/json/Commune_Of_Algeria.json')));
-        } catch(ErrorException $e) {
-            $communes_json = json_decode(file_get_contents(__DIR__ .'/json/Commune_Of_Algeria.json'));
+        } catch (ErrorException $e) {
+            $communes_json = json_decode(file_get_contents(__DIR__.'/json/Commune_Of_Algeria.json'));
         }
         // Insert communes
         $data = [];
         foreach ($communes_json as $commune) {
             $data[] = [
-                'name'        => $commune->name,
+                'name' => $commune->name,
                 'arabic_name' => $commune->ar_name,
-                'post_code'   => $commune->post_code,
-                'wilaya_id'   => $commune->wilaya_id,
-                'longitude'   => $commune->longitude,
-                'latitude'    => $commune->latitude,
-                'created_at'  => now(),
+                'post_code' => $commune->post_code,
+                'wilaya_id' => $commune->wilaya_id,
+                'longitude' => $commune->longitude,
+                'latitude' => $commune->latitude,
+                'created_at' => now(),
             ];
         }
         DB::table('communes')->insert($data);

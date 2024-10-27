@@ -6,20 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wilaya extends Model
 {
-    protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude', ];
+    protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude'];
 
     /*
     |------------------------------------------------------------------------------------
     | Validations
     |------------------------------------------------------------------------------------
     */
-    public static function rules($update = false, $id=null)
+    public static function rules($update = false, $id = null)
     {
-        $common = [
-            'name'    => 'required',
+        return [
+            'name' => 'required',
         ];
-    
-        return $common;
     }
 
     /*

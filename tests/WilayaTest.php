@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 use Kossa\AlgerianCities\Tests\TestCase;
 use Kossa\AlgerianCities\Wilaya;
@@ -21,5 +23,4 @@ final class WilayaTest extends TestCase
             '{"id":16,"name":"Alger","arabic_name":"الجزائر","longitude":36.753768,"latitude":3.0587561}'
         );
     }
-
 }
