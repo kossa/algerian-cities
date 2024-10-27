@@ -146,10 +146,9 @@ This package includes `api.php` routes, allowing you to interact with the data t
 ## Future Planned Features
 
 - [ ] Add support for Dairas (districts), including relationships with Wilayas and Communes
-- [ ] Implement unit tests for API endpoints
-- [ ] Add support for caching to optimize API responses
 - [ ] Add support for additional languages
 - [ ] Add a configuration file to allow customizing package behaviors
+- [ ] Add support for caching to optimize API responses
 
 ## Contribution
 
