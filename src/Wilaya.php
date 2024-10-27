@@ -4,6 +4,9 @@ namespace Kossa\AlgerianCities;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $name
+ */
 class Wilaya extends Model
 {
     protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude'];
