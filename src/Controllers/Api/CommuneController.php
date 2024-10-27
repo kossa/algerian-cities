@@ -32,7 +32,7 @@ class CommuneController
     public function search($q)
     {
         return Commune::where('name', 'like', "%$q%")
-                        ->orWhere('arabic_name', 'like', "%$q%")
-                        ->get();
+            ->orWhere('arabic_name', 'like', "%$q%")
+            ->get();
     }
 }

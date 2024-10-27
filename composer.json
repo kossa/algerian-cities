@@ -10,13 +10,14 @@
   ],
   "homepage": "https://github.com/kossa/algerian-cities",
   "require": {
-    "php": "^8.0|^8.1|^8.2|^8.3|^8.4",
-    "laravel/framework": "^9.0|^10.0|^11.0"
+    "php": "^8.1|^8.2|^8.3",
+    "laravel/framework": "^10.0|^11.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.0",
-    "orchestra/testbench": "^7.0",
-    "phpstan/phpstan": "^1.0"
+    "phpunit/phpunit": "^10.0|^11.0",
+    "orchestra/testbench": "^8.0|^9.0",
+    "laravel/pint": "^1.18",
+    "larastan/larastan": "^2.0"
   },
   "license": "MIT",
   "autoload": {
@@ -46,8 +47,8 @@
         "Kossa\\AlgerianCities\\Console\\Commands\\AlgerianCitiesCommand::handle"
     ],
     "test": "vendor/bin/phpunit -c ./phpunit.xml --colors=always",
-    "analysis": "vendor/bin/phpstan analyse"
+    "analyse": "vendor/bin/phpstan analyse --memory-limit=256M",
+    "format": "vendor/bin/pint"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "minimum-stability": "stable"
 }

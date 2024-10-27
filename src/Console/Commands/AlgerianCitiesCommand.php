@@ -3,9 +3,7 @@
 namespace Kossa\AlgerianCities\Console\Commands;
 
 use Illuminate\Console\Command;
-use DB;
-use Schema;
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
 
 class AlgerianCitiesCommand extends Command
 {
@@ -41,8 +39,8 @@ class AlgerianCitiesCommand extends Command
     public function handle()
     {
         // Publish verndor
-        Artisan::call('vendor:publish', ["--provider"=>"Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider"]);
-        
+        Artisan::call('vendor:publish', ['--provider' => "Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider"]);
+
         Artisan::call('db:seed --class=WilayaCommuneSeeder');
     }
 }

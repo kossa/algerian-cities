@@ -34,7 +34,7 @@ class WilayaController
     {
         return Commune::where('wilaya_id', $id)->get();
     }
-    
+
     /**
      * Search wilaya by name or arabic_name
      *
@@ -43,7 +43,7 @@ class WilayaController
     public function search($q)
     {
         return Wilaya::where('name', 'like', "%$q%")
-                        ->orWhere('arabic_name', 'like', "%$q%")
-                        ->get();
+            ->orWhere('arabic_name', 'like', "%$q%")
+            ->get();
     }
 }

@@ -15,16 +15,15 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
     {
         // Migrations
         $this->publishes([
-            __DIR__.'/../../database/migrations/create_cities_table.php.stub' =>
-                database_path('migrations') . '/' . $this->getMigrationFileName('create_cities_table.php'),
-                    
+            __DIR__.'/../../database/migrations/2024_10_26_000000_create_cities_table.php.stub' => database_path('migrations').'/2024_10_26_000000_create_cities_table.php',
+
         ], 'migrations');
 
         // Seeds
         $this->publishes([
             __DIR__.'/../../database/seeders/' => database_path('seeders'),
         ], 'seeds');
-        
+
         // Commande
         if ($this->app->runningInConsole()) {
             $this->commands([
@@ -34,8 +33,8 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
 
         // API
         $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
-        
-        require __DIR__ . '/../helpers.php';
+
+        require __DIR__.'/../helpers.php';
     }
 
     /**
@@ -54,10 +53,5 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
         // $this->mergeConfigFrom(
         //     __DIR__.'/../../config/algerian-cities.php', 'algerian-cities'
         // );
-    }
-
-    protected function getMigrationFileName($file_name)
-    {
-        return date('Y_m_d_His') . '_' . $file_name;
     }
 }
