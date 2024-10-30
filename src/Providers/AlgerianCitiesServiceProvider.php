@@ -36,7 +36,7 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
             __DIR__.'/../../config/algerian-cities.php' => config_path('algerian-cities.php'),
         ], 'config');
 
-        if (config('algerian-cities.use_routes', true)) {
+        if (config('algerian-cities.api_enabled')) {
             $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
         }
 
