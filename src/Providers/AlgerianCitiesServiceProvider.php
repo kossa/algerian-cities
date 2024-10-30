@@ -31,8 +31,14 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
             ]);
         }
 
-        // API
-        $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
+        // Config file
+        $this->publishes([
+            __DIR__.'/../../config/algerian-cities.php' => config_path('algerian-cities.php'),
+        ], 'config');
+
+        if(config('algerian-cities.use_routes', true)) {
+            $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
+        }
 
         require __DIR__.'/../helpers.php';
     }
@@ -50,8 +56,8 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
          * Uncomment this function call to load the config file.
          * If the config file is also publishable, it will merge with that file
          */
-        // $this->mergeConfigFrom(
-        //     __DIR__.'/../../config/algerian-cities.php', 'algerian-cities'
-        // );
+         $this->mergeConfigFrom(
+             __DIR__.'/../../config/algerian-cities.php', 'algerian-cities'
+         );
     }
 }
