@@ -2,6 +2,7 @@
 
 namespace Kossa\AlgerianCities\Tests;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 
@@ -14,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 {
     use RefreshDatabase;
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         $CreateCitiesTable = include __DIR__.'/../database/migrations/2024_10_26_000000_create_cities_table.php.stub';
 
@@ -26,13 +27,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Include the package's service provider(s)
-     *
-     * @see https://packages.tools/testbench/basic/testcase.html#package-service-providers
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return array
+     **
+     * @param  Application  $app
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             \Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider::class,

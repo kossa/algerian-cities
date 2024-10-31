@@ -20,8 +20,8 @@ It provides functionality to load Wilayas (provinces) and Communes (municipaliti
 - Wilaya and Commune Eloquent models with relationships.
 - Supports Arabic and French languages.
 - Includes postal codes and latitude/longitude for each commune.
-- Available as API endpoints.
-- Helper functions for easy integration in Blade views.
+- [Helper functions for easy integration in Blade views](#using-helper-functions).
+- [Available as API endpoints](#using-the-package-as-an-api).
 
 ## Requirements
 
@@ -51,23 +51,14 @@ The package provides two models: `Wilaya` and `Commune`.
 A `Wilaya` has many `Commune`, and you can interact with them just like any other Eloquent models.
 
 ```php
-namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-use Kossa\AlgerianCities\Commune;
-use Kossa\AlgerianCities\Wilaya;
-
-class AnyClass extends Model
-{
-    // Retrieve all Wilayas
-    $wilayas = Wilaya::all();
-
-    // Retrieve all Communes
-    $communes = Commune::all();
-
-    // Get all Communes belonging to Algiers (Wilaya ID: 16)
-    $algiers_communes = Commune::where('wilaya_id', 16)->get();
-}
+// Retrieve all Wilayas
+$wilayas = Wilaya::all();
+    
+// Retrieve all Communes
+$communes = Commune::all();
+    
+// Get all Communes belonging to Algiers (Wilaya ID: 16)
+$algiers_communes = Commune::where('wilaya_id', 16)->get();
 ```
 
 ### Using Helper Functions
@@ -142,6 +133,16 @@ This package includes `api.php` routes, allowing you to interact with the data t
 | GET  | `/api/communes/{id}`         | Retrieve a specific Commune by ID                  |
 | GET  | `/api/search/wilaya/{q}`     | Search Wilayas by name or Arabic name              |
 | GET  | `/api/search/commune/{q}`    | Search Communes by name or Arabic name             |
+
+### API Availability Toggle
+
+You can enable or disable the Algerian Cities API endpoints by setting the following option in your `.env` file:
+
+```dotenv
+ALGERIAN_CITIES_API_ENABLED=false # Default: true
+```
+
+----
 
 ## Future Planned Features
 
