@@ -26,7 +26,7 @@ It provides functionality to load Wilayas (provinces) and Communes (municipaliti
 ## Requirements
 
 - **PHP** : 8.1 or higher
-- **Laravel** : 10 and 11
+- **Laravel** : 10 or higher
 
 ## Installation
 
@@ -180,6 +180,8 @@ If you discover any security vulnerabilities, please report them by emailing the
 If you find this package helpful, please consider giving it a ⭐ on [GitHub](https://github.com/kossa/algerian-cities) !
 Your support encourages us to keep improving the project.
 Thank you!
+
+[![Stargazers repo roster for @kossa/algerian-cities](https://reporoster.com/stars/dark/kossa/algerian-cities)](https://github.com/kossa/algerian-cities/stargazers)
 
 ## License
 
