@@ -49,8 +49,5 @@ jobs:
       - name: List Installed Dependencies
         run: composer show -D
 
-      - name: PHPStan analyse
-        run: composer analyse
-
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
+      - name: Execute tests
         run: composer test

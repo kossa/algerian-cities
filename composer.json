@@ -47,16 +47,17 @@
     "post-install-cmd": [
         "Kossa\\AlgerianCities\\Console\\Commands\\AlgerianCitiesCommand::handle"
     ],
-    "test:unit": "pest",
+    "test:unit": "pest --parallel  --coverage --min=54",
     "test:format": "pint --test",
     "test:refactor": "rector --dry-run",
+    "test:types": "vendor/bin/phpstan analyse --memory-limit=256M",
     "test": [
         "@test:unit",
         "@test:format",
-        "@test:refactor"
+        "@test:refactor",
+        "@test:types"
     ],
     "refactor": "rector",
-    "analyse": "vendor/bin/phpstan analyse --memory-limit=256M",
     "format": "vendor/bin/pint"
   },
   "minimum-stability": "dev",
