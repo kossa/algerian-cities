@@ -7,15 +7,13 @@ use Kossa\AlgerianCities\Tests\TestCase;
 
 final class CommuneTest extends TestCase
 {
-    /** @test */
-    public function if_commune_count_is_correct()
+    public function test_if_commune_count_is_correct(): void
     {
         $count = Commune::count();
         $this->assertEquals(1541, $count);
     }
 
-    /** @test */
-    public function if_commune_details_are_correct()
+    public function test_if_commune_details_are_correct(): void
     {
         $sampleCommune = Commune::where('name', 'Alger Centre')
             ->first(['id', 'name', 'arabic_name', 'post_code', 'longitude', 'latitude']);

@@ -15,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 {
     use RefreshDatabase;
 
-    public function getEnvironmentSetUp($app): void
+    protected function getEnvironmentSetUp($app): void
     {
         $CreateCitiesTable = include __DIR__.'/../database/migrations/2024_10_26_000000_create_cities_table.php.stub';
 

@@ -17,7 +17,7 @@ class Commune extends Model
     | Validations
     |------------------------------------------------------------------------------------
     */
-    public static function rules($update = false, $id = null)
+    public static function rules($update = false, $id = null): array
     {
         return [
             'name' => 'required',
@@ -30,10 +30,10 @@ class Commune extends Model
     | Relations
     |------------------------------------------------------------------------------------
     */
-    public function scopeWithWilaya($q, $name = 'name')
+    public function scopeWithWilaya($q, $name = 'name'): void
     {
         $q->leftJoin('wilayas', 'wilayas.id', 'communes.wilaya_id')
-            ->select('communes.id', DB::raw("concat(communes.$name, ', ', wilayas.$name) as name"));
+            ->select('communes.id', DB::raw(sprintf("concat(communes.%s, ', ', wilayas.%s) as name", $name, $name)));
     }
 
     public function wilaya()

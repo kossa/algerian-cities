@@ -20,6 +20,11 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <coverage>
+        <report>
+            <html outputDirectory="coverage-report"/>
+        </report>
+    </coverage>
     <source>
         <include>
             <directory suffix=".php">./src</directory>

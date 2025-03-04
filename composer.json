@@ -14,10 +14,11 @@
     "laravel/framework": "^10.0 | ^11.0 | ^12.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.0 | ^11.0",
     "orchestra/testbench": "^8.0 | ^9.0 | ^10.0",
     "laravel/pint": "^1.18",
-    "larastan/larastan": "^2.0 | ^3.0"
+    "larastan/larastan": "^2.9 | ^3.0",
+    "rector/rector": "^1.0 | ^2.0",
+    "pestphp/pest": "^2.36 | ^3.0"
   },
   "license": "MIT",
   "autoload": {
@@ -46,10 +47,24 @@
     "post-install-cmd": [
         "Kossa\\AlgerianCities\\Console\\Commands\\AlgerianCitiesCommand::handle"
     ],
-    "test": "vendor/bin/phpunit -c ./phpunit.xml --colors=always",
-    "analyse": "vendor/bin/phpstan analyse --memory-limit=256M",
+    "test:unit": "pest --parallel  --coverage --min=54",
+    "test:format": "pint --test",
+    "test:refactor": "rector --dry-run",
+    "test:types": "vendor/bin/phpstan analyse --memory-limit=256M",
+    "test": [
+        "@test:unit",
+        "@test:format",
+        "@test:refactor",
+        "@test:types"
+    ],
+    "refactor": "rector",
     "format": "vendor/bin/pint"
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
 }

@@ -33,13 +33,11 @@ class AlgerianCitiesCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return mixed
      */
-    public function handle()
+    public function handle(): void
     {
         // Publish verndor
-        Artisan::call('vendor:publish', ['--provider' => "Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider"]);
+        Artisan::call('vendor:publish', ['--provider' => \Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider::class]);
 
         Artisan::call('db:seed --class=WilayaCommuneSeeder');
     }

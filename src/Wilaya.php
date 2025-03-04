@@ -16,7 +16,7 @@ class Wilaya extends Model
     | Validations
     |------------------------------------------------------------------------------------
     */
-    public static function rules($update = false, $id = null)
+    public static function rules($update = false, $id = null): array
     {
         return [
             'name' => 'required',
