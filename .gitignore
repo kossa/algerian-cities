@@ -3,3 +3,4 @@
 composer.lock
 .phpunit.result.cachecomposer.lock
 /.phpunit.cache
+/coverage-report

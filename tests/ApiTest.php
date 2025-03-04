@@ -6,8 +6,7 @@ namespace Kossa\AlgerianCities\Tests;
 
 final class ApiTest extends TestCase
 {
-    /** @test */
-    public function if_all_endpoint_works()
+    public function test_if_all_endpoint_works(): void
     {
         $this->get('/api/wilayas')
             ->assertStatus(200)

@@ -8,10 +8,8 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         // Migrations
         $this->publishes([
@@ -45,10 +43,8 @@ class AlgerianCitiesServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         /**
          * Config file

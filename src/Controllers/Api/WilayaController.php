@@ -42,8 +42,8 @@ class WilayaController
      */
     public function search($q)
     {
-        return Wilaya::where('name', 'like', "%$q%")
-            ->orWhere('arabic_name', 'like', "%$q%")
+        return Wilaya::where('name', 'like', sprintf('%%%s%%', $q))
+            ->orWhere('arabic_name', 'like', sprintf('%%%s%%', $q))
             ->get();
     }
 }
