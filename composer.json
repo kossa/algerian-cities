@@ -18,7 +18,7 @@
     "laravel/pint": "^1.18",
     "larastan/larastan": "^2.0 | ^3.0",
     "rector/rector": "^2.0",
-    "pestphp/pest": "^3"
+    "pestphp/pest": "^2.0 | ^3.0"
   },
   "license": "MIT",
   "autoload": {
