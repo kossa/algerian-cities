@@ -20,7 +20,7 @@ final class CommuneTest extends TestCase
 
         $this->assertJsonStringEqualsJsonString(
             $sampleCommune->toJson(),
-            '{"id":554,"name":"Alger Centre","arabic_name":"الجزائر الوسطى","longitude":3.0612244,"latitude":36.7712246,"post_code": "16001"}'
+            '{"id":554,"name":"Alger Centre","arabic_name":"الجزائر الوسطى","longitude":3.061224,"latitude":36.771225,"post_code": "16001"}'
         );
     }
 }

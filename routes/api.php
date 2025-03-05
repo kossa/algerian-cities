@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Route;
 use Kossa\AlgerianCities\Controllers\Api\CommuneController;
 use Kossa\AlgerianCities\Controllers\Api\WilayaController;

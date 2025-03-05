@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kossa\AlgerianCities\Tests;
 
 use Illuminate\Foundation\Application;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kossa\AlgerianCities\Providers;
 
 use Illuminate\Support\ServiceProvider;

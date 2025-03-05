@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kossa\AlgerianCities;
 
 use Illuminate\Database\Eloquent\Model;
