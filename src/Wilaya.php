@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Kossa\AlgerianCities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property string $name
@@ -13,24 +14,22 @@ class Wilaya extends Model
 {
     protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude'];
 
-    /*
-    |------------------------------------------------------------------------------------
-    | Validations
-    |------------------------------------------------------------------------------------
-    */
-    public static function rules($update = false, $id = null): array
+    /**
+     * Validation rules
+     *
+     * @return array<string, string>
+     */
+    public static function rules(): array
     {
         return [
             'name' => 'required',
         ];
     }
 
-    /*
-    |------------------------------------------------------------------------------------
-    | Relations
-    |------------------------------------------------------------------------------------
-    */
-    public function communes()
+    /**
+     * @return HasMany<Commune, $this>
+     */
+    public function communes(): HasMany
     {
         return $this->hasMany(Commune::class);
     }

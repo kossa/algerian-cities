@@ -12,10 +12,8 @@ class WilayaCommuneSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Check if table exist
         if (! Schema::hasTable('wilayas') || ! Schema::hasTable('communes')) {
@@ -35,13 +33,13 @@ class WilayaCommuneSeeder extends Seeder
         $this->command->comment('Wilayas/Communes already loaded');
     }
 
-    protected function loadData()
+    protected function loadData(): void
     {
         $this->insertWilayas();
         $this->insertCommunes();
     }
 
-    protected function insertWilayas()
+    protected function insertWilayas(): void
     {
         // Load wilayas from json
         try {
@@ -63,7 +61,7 @@ class WilayaCommuneSeeder extends Seeder
         DB::table('wilayas')->insert($data);
     }
 
-    protected function insertCommunes()
+    protected function insertCommunes(): void
     {
         // Load wilayas from json
         try {
