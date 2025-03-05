@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Kossa\AlgerianCities\Commune;
 use Kossa\AlgerianCities\Wilaya;
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kossa\AlgerianCities\Controllers\Api;
 
 use Kossa\AlgerianCities\Commune;
