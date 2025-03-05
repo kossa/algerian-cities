@@ -30,13 +30,12 @@ class CommuneController
     /**
      * Search wilaya by name or arabic_name
      *
-     * @param  string  $q
      * @return Collection<int, Commune>
      */
-    public function search($q): Collection
+    public function search(string $keyword): Collection
     {
-        return Commune::where('name', 'like', sprintf('%%%s%%', $q))
-            ->orWhere('arabic_name', 'like', sprintf('%%%s%%', $q))
+        return Commune::where('name', 'like', sprintf('%%%s%%', $keyword))
+            ->orWhere('arabic_name', 'like', sprintf('%%%s%%', $keyword))
             ->get();
     }
 }

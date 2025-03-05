@@ -43,10 +43,10 @@ class WilayaController
      *
      * @return Collection<int, Wilaya>
      */
-    public function search(string $q): Collection
+    public function search(string $keyword): Collection
     {
-        return Wilaya::where('name', 'like', sprintf('%%%s%%', $q))
-            ->orWhere('arabic_name', 'like', sprintf('%%%s%%', $q))
+        return Wilaya::where('name', 'like', sprintf('%%%s%%', $keyword))
+            ->orWhere('arabic_name', 'like', sprintf('%%%s%%', $keyword))
             ->get();
     }
 }
