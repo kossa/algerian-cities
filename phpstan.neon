@@ -1,5 +1,6 @@
 includes:
     - vendor/larastan/larastan/extension.neon
+    - ignore-by-php-version.neon.php
 parameters:
     level: max
     paths:
