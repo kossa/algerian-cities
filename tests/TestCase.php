@@ -21,8 +21,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         $CreateCitiesTable = include __DIR__.'/../database/migrations/2024_10_26_000000_create_cities_table.php.stub';
 
-        // run the migration's up() method
-        $CreateCitiesTable->up();
+        assert($CreateCitiesTable instanceof \Illuminate\Database\Migrations\Migration);
+
+        if (method_exists($CreateCitiesTable, 'up')) {
+            $CreateCitiesTable->up();
+        }
 
         Artisan::call('db:seed', ['--class' => 'WilayaCommuneSeeder']);
     }

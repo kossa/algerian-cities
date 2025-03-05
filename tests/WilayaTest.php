@@ -15,7 +15,7 @@ final class WilayaTest extends TestCase
 
     public function test_if_wilaya_details_are_correct(): void
     {
-        $sampleWilaya = Wilaya::where('name', 'Alger')->first(['id', 'name', 'arabic_name', 'longitude', 'latitude']);
+        $sampleWilaya = Wilaya::where('name', 'Alger')->firstOrFail(['id', 'name', 'arabic_name', 'longitude', 'latitude']);
         $this->assertJsonStringEqualsJsonString(
             $sampleWilaya->toJson(),
             '{"id":16,"name":"Alger","arabic_name":"الجزائر","longitude":36.753768,"latitude":3.0587561}'

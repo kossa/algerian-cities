@@ -16,7 +16,7 @@ final class CommuneTest extends TestCase
     public function test_if_commune_details_are_correct(): void
     {
         $sampleCommune = Commune::where('name', 'Alger Centre')
-            ->first(['id', 'name', 'arabic_name', 'post_code', 'longitude', 'latitude']);
+            ->firstOrFail(['id', 'name', 'arabic_name', 'post_code', 'longitude', 'latitude']);
 
         $this->assertJsonStringEqualsJsonString(
             $sampleCommune->toJson(),
