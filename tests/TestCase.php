@@ -7,6 +7,7 @@ namespace Kossa\AlgerianCities\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
+use Kossa\AlgerianCities\AlgerianCitiesServiceProvider;
 
 /**
  * Override the standard PHPUnit testcase with the Testbench testcase
@@ -38,7 +39,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app): array
     {
         return [
-            \Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider::class,
+            AlgerianCitiesServiceProvider::class,
         ];
     }
 }

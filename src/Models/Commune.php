@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Kossa\AlgerianCities;
+namespace Kossa\AlgerianCities\Models;
 
+use Database\Factories\CommuneFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +16,9 @@ use Illuminate\Support\Facades\DB;
  */
 class Commune extends Model
 {
+    /** @use HasFactory<CommuneFactory> */
+    use HasFactory;
+
     protected $fillable = ['name', 'arabic_name', 'post_code', 'wilaya_id', 'longitude', 'latitude'];
 
     /**
@@ -54,5 +59,10 @@ class Commune extends Model
     public function getWilayaNameAttribute(): string
     {
         return $this->wilaya->name;
+    }
+
+    protected static function newFactory(): CommuneFactory
+    {
+        return CommuneFactory::new();
     }
 }

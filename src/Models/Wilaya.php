@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Kossa\AlgerianCities;
+namespace Kossa\AlgerianCities\Models;
 
+use Database\Factories\WilayaFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -12,6 +14,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Wilaya extends Model
 {
+    /** @use HasFactory<WilayaFactory> */
+    use HasFactory;
+
     protected $fillable = ['name', 'arabic_name', 'longitude', 'latitude'];
 
     /**
@@ -32,5 +37,10 @@ class Wilaya extends Model
     public function communes(): HasMany
     {
         return $this->hasMany(Commune::class);
+    }
+
+    protected static function newFactory(): WilayaFactory
+    {
+        return WilayaFactory::new();
     }
 }

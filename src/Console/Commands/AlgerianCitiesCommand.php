@@ -6,6 +6,7 @@ namespace Kossa\AlgerianCities\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use Kossa\AlgerianCities\AlgerianCitiesServiceProvider;
 
 class AlgerianCitiesCommand extends Command
 {
@@ -24,23 +25,18 @@ class AlgerianCitiesCommand extends Command
     protected $description = 'Upload wilayas/communes';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      */
-    public function handle(): void
+    public function handle(): int
     {
-        // Publish verndor
-        Artisan::call('vendor:publish', ['--provider' => \Kossa\AlgerianCities\Providers\AlgerianCitiesServiceProvider::class]);
+
+        Artisan::call('vendor:publish', ['--provider' => AlgerianCitiesServiceProvider::class]);
 
         Artisan::call('db:seed --class=WilayaCommuneSeeder');
+
+        $this->info('Success!! wilayas and communes are loaded successfully');
+
+        // return laravel command success
+        return self::SUCCESS;
     }
 }

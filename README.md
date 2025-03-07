@@ -1,11 +1,13 @@
 <div align="center">
     <img src="docs/package-social-preview-readme.png" width="600" alt="Laravel Algerian Cities">
     <div align="center">
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img src="https://poser.pugx.org/piteurstudio/satim-php/require/php" alt="PHP Version Require"></a>
+        <a href="https://github.com/kossa/algerian-cities/blob/master/phpstan.neon"><img src="https://img.shields.io/badge/PHPStan-max-blue.svg?style=flat" alt="PHPStan"></a>
+        <a href="https://github.com/kossa/algerian-cities/blob/master/composer.json#L51"><img src="https://img.shields.io/badge/Coverage-96%25-blue" alt="Test coverage"></a>
         <a href="https://github.com/kossa/algerian-cities/actions"><img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/actions/workflow/status/kossa/algerian-cities/laravel.yml?branch=master&label=Tests"></a>
-        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kossa/algerian-cities"></a>
         <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Latest Version" src="https://img.shields.io/packagist/v/kossa/algerian-cities"></a>
-        <a href="https://github.com/kossa/algerian-cities/actions"><img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/actions/workflow/status/kossa/algerian-cities/fix-php-code-style-issues.yml?branch=master&label=Code Style"></a>
-        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="License" src="https://img.shields.io/packagist/l/kossa/algerian-cities"></a>
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kossa/algerian-cities"></a>
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img src="https://poser.pugx.org/piteurstudio/satim-php/license" alt="License"></a>
     </div>
 </div>
 
@@ -144,13 +146,13 @@ ALGERIAN_CITIES_API_ENABLED=false # Default: true
 
 ----
 
-## Future Planned Features
+## Goals
 
-- [ ] Add support for Dairas (districts), including relationships with Wilayas and Communes
-- [ ] Add support for additional languages
+- [ ] Add support for Dairas, including relationships with Wilayas and Communes
 - [ ] Add a configuration file to allow customizing package behaviors
 - [ ] Add support for caching to optimize API responses
-- [ ] fix PHPUnit Deprecations
+- [ ] Add Trait to easily add Wilaya/commune to existing models
+- [ ] support no database usage
 
 ## Contribution
 
