@@ -8,8 +8,8 @@ use Database\Factories\CommuneFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\DB;
+use Kossa\AlgerianCities\Traits\HasWilaya;
 
 /**
  * @property Wilaya $wilaya
@@ -18,6 +18,8 @@ class Commune extends Model
 {
     /** @use HasFactory<CommuneFactory> */
     use HasFactory;
+
+    use HasWilaya;
 
     protected $fillable = ['name', 'arabic_name', 'post_code', 'wilaya_id', 'longitude', 'latitude'];
 
@@ -41,14 +43,6 @@ class Commune extends Model
     {
         $query->leftJoin('wilayas', 'wilayas.id', 'communes.wilaya_id')
             ->select('communes.id', DB::raw(sprintf("concat(communes.%s, ', ', wilayas.%s) as name", $name, $name)));
-    }
-
-    /**
-     * @return BelongsTo<Wilaya, $this>
-     */
-    public function wilaya(): BelongsTo
-    {
-        return $this->belongsTo(Wilaya::class)->withDefault();
     }
 
     /*

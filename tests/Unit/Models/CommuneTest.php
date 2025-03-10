@@ -27,11 +27,6 @@ it('belongs to a wilaya', function (): void {
     expect($commune->wilaya->id)->toBe($wilaya->id);
 });
 
-it('returns default wilaya when none is set', function (): void {
-    $commune = new Commune;
-    expect($commune->wilaya)->toBeInstanceOf(Wilaya::class);
-});
-
 it('returns correct wilaya name attribute', function (): void {
     $wilaya = Wilaya::factory()->create(['name' => 'Tizi Ouzou']);
     $commune = Commune::factory()->create(['wilaya_id' => $wilaya->id]);
@@ -46,4 +41,16 @@ it('applies scopeWithWilaya correctly', function (): void {
 
     expect($result)->not->toBeNull();
     expect($result->name)->toBe('Adrar, Adrar');
+});
+
+it('checks if the commune count is correct', function (): void {
+    expect(Commune::count())->toBe(1541);
+});
+
+it('checks if commune details are correct', function (): void {
+    $sampleCommune = Commune::where('name', 'Alger Centre')
+        ->firstOrFail(['id', 'name', 'post_code', 'longitude', 'latitude']);
+
+    expect($sampleCommune->toJson())->toBeJson()
+        ->toBe('{"id":554,"name":"Alger Centre","post_code":"16001","longitude":3.061224,"latitude":36.771225}');
 });

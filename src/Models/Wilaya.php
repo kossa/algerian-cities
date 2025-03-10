@@ -8,12 +8,15 @@ use Database\Factories\WilayaFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Kossa\AlgerianCities\Traits\HasCommune;
 
 /**
  * @property string $name
  */
 class Wilaya extends Model
 {
+    use HasCommune;
+
     /** @use HasFactory<WilayaFactory> */
     use HasFactory;
 

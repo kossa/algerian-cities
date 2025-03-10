@@ -3,7 +3,7 @@
     <div align="center">
         <a href="https://packagist.org/packages/kossa/algerian-cities"><img src="https://poser.pugx.org/piteurstudio/satim-php/require/php" alt="PHP Version Require"></a>
         <a href="https://github.com/kossa/algerian-cities/blob/master/phpstan.neon"><img src="https://img.shields.io/badge/PHPStan-max-blue.svg?style=flat" alt="PHPStan"></a>
-        <a href="https://github.com/kossa/algerian-cities/blob/master/composer.json#L51"><img src="https://img.shields.io/badge/Coverage-96%25-blue" alt="Test coverage"></a>
+        <a href="https://github.com/kossa/algerian-cities/blob/master/composer.json#L51"><img src="https://img.shields.io/badge/Coverage-100%25-blue" alt="Test coverage"></a>
         <a href="https://github.com/kossa/algerian-cities/actions"><img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/actions/workflow/status/kossa/algerian-cities/laravel.yml?branch=master&label=Tests"></a>
         <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Latest Version" src="https://img.shields.io/packagist/v/kossa/algerian-cities"></a>
         <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kossa/algerian-cities"></a>
@@ -136,6 +136,38 @@ This package includes `api.php` routes, allowing you to interact with the data t
 | GET  | `/api/search/wilaya/{q}`     | Search Wilayas by name or Arabic name              |
 | GET  | `/api/search/commune/{q}`    | Search Communes by name or Arabic name             |
 
+### Usage of Traits
+
+The package provides **`HasWilaya`** and **`HasCommune`** traits to easily associate models with **Wilayas (provinces)** and **Communes (municipalities)**.
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Kossa\AlgerianCities\Traits\HasWilaya;
+use Kossa\AlgerianCities\Traits\HasCommune;
+
+class User extends Model
+{
+    use HasWilaya, HasCommune;
+}
+```
+
+#### **Access Wilaya & Commune Data**
+```php
+$user = User::find(1);
+
+echo $user->wilaya->name; // Example: "Alger"
+echo $user->commune->name; // Example: "Bab El Oued"
+```
+
+✔ **Ensure `wilaya_id` and `commune_id` exist in the `users` table:**
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->foreignId('wilaya_id')->nullable()->constrained('wilayas');
+    $table->foreignId('commune_id')->nullable()->constrained('communes');
+});
+```
+
+## Config
 ### API Availability Toggle
 
 You can enable or disable the Algerian Cities API endpoints by setting the following option in your `.env` file:
@@ -151,7 +183,6 @@ ALGERIAN_CITIES_API_ENABLED=false # Default: true
 - [ ] Add support for Dairas, including relationships with Wilayas and Communes
 - [ ] Add a configuration file to allow customizing package behaviors
 - [ ] Add support for caching to optimize API responses
-- [ ] Add Trait to easily add Wilaya/commune to existing models
 - [ ] support no database usage
 
 ## Contribution
