@@ -1,5 +1,3 @@
-includes:
-    - ignore-by-php-version.neon.php
 parameters:
     level: max
     paths:
