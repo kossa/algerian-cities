@@ -6,7 +6,7 @@ parameters:
 			path: src/Models/Commune.php
 
 		-
-			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Database\\\\Factories\\\\CommuneFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
+			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Kossa\\\\AlgerianCities\\\\Database\\\\Factories\\\\CommuneFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
 			count: 1
 			path: src/Models/Commune.php
 
@@ -26,6 +26,6 @@ parameters:
 			path: src/Models/Wilaya.php
 
 		-
-			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Database\\\\Factories\\\\WilayaFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
+			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Kossa\\\\AlgerianCities\\\\Database\\\\Factories\\\\WilayaFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
 			count: 1
 			path: src/Models/Wilaya.php
