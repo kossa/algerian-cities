@@ -22,6 +22,7 @@ It provides functionality to load Wilayas (provinces) and Communes (municipaliti
 - Wilaya and Commune Eloquent models with relationships.
 - Supports Arabic and French languages.
 - Includes postal codes and latitude/longitude for each commune.
+- [`HasWilaya` and `HasCommune` traits to simplify model associations](#usage-of-traits).
 - [Helper functions for easy integration in Blade views](#using-helper-functions).
 - [Available as API endpoints](#using-the-package-as-an-api).
 
