@@ -32,6 +32,7 @@
   "autoload": {
     "psr-4": {
       "Kossa\\AlgerianCities\\": "src/",
+      "Kossa\\AlgerianCities\\Database\\Factories\\": "database/factories/",
       "Database\\Migrations\\": "database/migrations/",
       "Database\\Seeders\\": "database/seeders/"
     },
@@ -41,8 +42,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Kossa\\AlgerianCities\\Tests\\": "tests/",
-      "Database\\Factories\\":"database/factories/"
+      "Kossa\\AlgerianCities\\Tests\\": "tests/"
     }
   },
   "extra": {
@@ -54,7 +54,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-        "Kossa\\AlgerianCities\\Console\\Commands\\AlgerianCitiesCommand::handle"
+      "echo 'Run php artisan algerian-cities:install to complete the setup.';"
     ],
     "post-autoload-dump": "@composer run prepare",
     "prepare": "@php vendor/bin/testbench package:discover --ansi",

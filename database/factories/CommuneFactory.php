@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Kossa\AlgerianCities\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Kossa\AlgerianCities\Models\Commune;
@@ -10,7 +10,7 @@ class CommuneFactory extends Factory
 {
     protected $model = Commune::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->city,

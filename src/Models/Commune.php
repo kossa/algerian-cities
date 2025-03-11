@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Kossa\AlgerianCities\Models;
 
-use Database\Factories\CommuneFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Kossa\AlgerianCities\Database\Factories\CommuneFactory;
 use Kossa\AlgerianCities\Traits\HasWilaya;
 
 /**
