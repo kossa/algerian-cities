@@ -33,6 +33,9 @@ class WilayaCommuneSeeder extends Seeder
         $this->command->comment('Wilayas/Communes already loaded');
     }
 
+    /**
+     * Load and insert Wilayas and Communes data.
+     */
     protected function loadData(): void
     {
         $this->insertWilayas();

@@ -1,16 +1,31 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Kossa\\\\AlgerianCities\\\\Commune\\:\\:wilaya\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Wilaya, \\$this\\(Kossa\\\\AlgerianCities\\\\Commune\\)\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Wilaya, Kossa\\\\AlgerianCities\\\\Commune\\>\\.$#"
+			message: "#^Method Kossa\\\\AlgerianCities\\\\Models\\\\Commune\\:\\:wilaya\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya, \\$this\\(Kossa\\\\AlgerianCities\\\\Models\\\\Commune\\)\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya, Kossa\\\\AlgerianCities\\\\Models\\\\Commune\\>\\.$#"
 			count: 1
-			path: src/Commune.php
+			path: src/Models/Commune.php
 
 		-
-			message: "#^Generic type Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Commune, \\$this\\(Kossa\\\\AlgerianCities\\\\Wilaya\\)\\> in PHPDoc tag @return specifies 2 template types, but class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany supports only 1\\: TRelatedModel$#"
+			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Kossa\\\\AlgerianCities\\\\Database\\\\Factories\\\\CommuneFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
 			count: 1
-			path: src/Wilaya.php
+			path: src/Models/Commune.php
 
 		-
-			message: "#^Method Kossa\\\\AlgerianCities\\\\Wilaya\\:\\:communes\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Commune, \\$this\\(Kossa\\\\AlgerianCities\\\\Wilaya\\)\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Commune\\>\\.$#"
+			message: "#^Generic type Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Models\\\\Commune, \\$this\\(Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\)\\> in PHPDoc tag @return specifies 2 template types, but class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany supports only 1\\: TRelatedModel$#"
 			count: 1
-			path: src/Wilaya.php
+			path: src/Models/Wilaya.php
+
+		-
+			message: "#^Method Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\:\\:commune\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Models\\\\Commune, \\$this\\(Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\)\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo\\<Kossa\\\\AlgerianCities\\\\Models\\\\Commune, Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\>\\.$#"
+			count: 1
+			path: src/Models/Wilaya.php
+
+		-
+			message: "#^Method Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\:\\:communes\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Models\\\\Commune, \\$this\\(Kossa\\\\AlgerianCities\\\\Models\\\\Wilaya\\)\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<Kossa\\\\AlgerianCities\\\\Models\\\\Commune\\>\\.$#"
+			count: 1
+			path: src/Models/Wilaya.php
+
+		-
+			message: "#^PHPDoc tag @use contains generic type Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory\\<Kossa\\\\AlgerianCities\\\\Database\\\\Factories\\\\WilayaFactory\\> but trait Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\HasFactory is not generic\\.$#"
+			count: 1
+			path: src/Models/Wilaya.php

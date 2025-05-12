@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Kossa\AlgerianCities\Commune;
-use Kossa\AlgerianCities\Wilaya;
+use Kossa\AlgerianCities\Models\Commune;
+use Kossa\AlgerianCities\Models\Wilaya;
 
 if (! function_exists('communes')) {
 
