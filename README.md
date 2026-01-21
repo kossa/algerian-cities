@@ -1,11 +1,13 @@
 <div align="center">
     <img src="docs/package-social-preview-readme.png" width="600" alt="Laravel Algerian Cities">
     <div align="center">
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img src="https://poser.pugx.org/piteurstudio/satim-php/require/php" alt="PHP Version Require"></a>
+        <a href="https://github.com/kossa/algerian-cities/blob/master/phpstan.neon"><img src="https://img.shields.io/badge/PHPStan-max-blue.svg?style=flat" alt="PHPStan"></a>
+        <a href="https://github.com/kossa/algerian-cities/blob/master/composer.json#L51"><img src="https://img.shields.io/badge/Coverage-100%25-blue" alt="Test coverage"></a>
         <a href="https://github.com/kossa/algerian-cities/actions"><img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/actions/workflow/status/kossa/algerian-cities/laravel.yml?branch=master&label=Tests"></a>
-        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kossa/algerian-cities"></a>
         <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Latest Version" src="https://img.shields.io/packagist/v/kossa/algerian-cities"></a>
-        <a href="https://github.com/kossa/algerian-cities/actions"><img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/actions/workflow/status/kossa/algerian-cities/fix-php-code-style-issues.yml?branch=master&label=Code Style"></a>
-        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="License" src="https://img.shields.io/packagist/l/kossa/algerian-cities"></a>
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/kossa/algerian-cities"></a>
+        <a href="https://packagist.org/packages/kossa/algerian-cities"><img src="https://poser.pugx.org/piteurstudio/satim-php/license" alt="License"></a>
     </div>
 </div>
 
@@ -20,6 +22,7 @@ It provides functionality to load Wilayas (provinces) and Communes (municipaliti
 - Wilaya and Commune Eloquent models with relationships.
 - Supports Arabic and French languages.
 - Includes postal codes and latitude/longitude for each commune.
+- [`HasWilaya` and `HasCommune` traits to simplify model associations](#usage-of-traits).
 - [Helper functions for easy integration in Blade views](#using-helper-functions).
 - [Available as API endpoints](#using-the-package-as-an-api).
 
@@ -134,6 +137,38 @@ This package includes `api.php` routes, allowing you to interact with the data t
 | GET  | `/api/search/wilaya/{q}`     | Search Wilayas by name or Arabic name              |
 | GET  | `/api/search/commune/{q}`    | Search Communes by name or Arabic name             |
 
+### Usage of Traits
+
+The package provides **`HasWilaya`** and **`HasCommune`** traits to easily associate models with **Wilayas (provinces)** and **Communes (municipalities)**.
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Kossa\AlgerianCities\Traits\HasWilaya;
+use Kossa\AlgerianCities\Traits\HasCommune;
+
+class User extends Model
+{
+    use HasWilaya, HasCommune;
+}
+```
+
+#### **Access Wilaya & Commune Data**
+```php
+$user = User::find(1);
+
+echo $user->wilaya->name; // Example: "Alger"
+echo $user->commune->name; // Example: "Bab El Oued"
+```
+
+✔ **Ensure `wilaya_id` and `commune_id` exist in the `users` table:**
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->foreignId('wilaya_id')->nullable()->constrained('wilayas');
+    $table->foreignId('commune_id')->nullable()->constrained('communes');
+});
+```
+
+## Config
 ### API Availability Toggle
 
 You can enable or disable the Algerian Cities API endpoints by setting the following option in your `.env` file:
@@ -144,13 +179,12 @@ ALGERIAN_CITIES_API_ENABLED=false # Default: true
 
 ----
 
-## Future Planned Features
+## Goals
 
-- [ ] Add support for Dairas (districts), including relationships with Wilayas and Communes
-- [ ] Add support for additional languages
+- [ ] Add support for Dairas, including relationships with Wilayas and Communes
 - [ ] Add a configuration file to allow customizing package behaviors
 - [ ] Add support for caching to optimize API responses
-- [ ] fix PHPUnit Deprecations
+- [ ] support no database usage
 
 ## Contribution
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Kossa\AlgerianCities\Controllers\Api;
 
 use Illuminate\Database\Eloquent\Collection;
-use Kossa\AlgerianCities\Commune;
+use Kossa\AlgerianCities\Models\Commune;
 
 class CommuneController
 {

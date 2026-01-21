@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Kossa\AlgerianCities\Controllers\Api;
 
 use Illuminate\Database\Eloquent\Collection;
-use Kossa\AlgerianCities\Commune;
-use Kossa\AlgerianCities\Wilaya;
+use Kossa\AlgerianCities\Models\Commune;
+use Kossa\AlgerianCities\Models\Wilaya;
 
 class WilayaController
 {
