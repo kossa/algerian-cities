@@ -10,7 +10,7 @@ final class WilayaTest extends TestCase
     public function test_if_wilayas_count_is_correct(): void
     {
         $count = Wilaya::count();
-        $this->assertEquals(58, $count);
+        $this->assertEquals(69, $count);
     }
 
     public function test_if_wilaya_details_are_correct(): void

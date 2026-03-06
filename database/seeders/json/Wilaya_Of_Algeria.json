@@ -56,5 +56,16 @@
 {"id": 55,"code": 55,"name": "Touggourt","ar_name": "تقرت","longitude": 33.1049642,"latitude": 6.0662834 },
 {"id": 56,"code": 56,"name": "Djanet","ar_name": "جانت","longitude": 24.554151,"latitude": 9.485429 },
 {"id": 57,"code": 57,"name": "El M'ghair","ar_name": "المغير","longitude": 33.950285,"latitude": 5.9244238 },
-{"id": 58,"code": 58,"name": "El Menia","ar_name": "المنيعة","longitude": 30.5833161,"latitude": 2.8836701 }
+{"id": 58,"code": 58,"name": "El Menia","ar_name": "المنيعة","longitude": 30.5833161,"latitude": 2.8836701 },
+{"id": 59,"code": 59,"name": "Aflou","ar_name": "أفلو","longitude": 34.1515479,"latitude": 2.0451079 },
+{"id": 60,"code": 60,"name": "Barika","ar_name": "بريكة","longitude": 35.3689735,"latitude": 5.1997325 },
+{"id": 61,"code": 61,"name": "El Kantara","ar_name": "القنطرة","longitude": 35.2036113,"latitude": 5.5631003 },
+{"id": 62,"code": 62,"name": "Bir El Ater","ar_name": "بئر العاتر","longitude": 34.683154, "latitude": 7.0925519 },
+{"id": 63,"code": 63,"name": "El Aricha","ar_name": "العريشة","longitude": 34.3937118,"latitude": -1.3663127 },
+{"id": 64,"code": 64,"name": "Ksar Chellala","ar_name": "قصر الشلالة","longitude": 35.2487727,"latitude": 2.2355333 },
+{"id": 65,"code": 65,"name": "Ain Oussera","ar_name": "عين وسارة","longitude": 35.4958842,"latitude": 2.5340286 },
+{"id": 66,"code": 66,"name": "Messaad","ar_name": "مسعد","longitude": 34.159975,"latitude": 3.4009704 },
+{"id": 67,"code": 67,"name": "Ksar El Boukhari","ar_name": "قصر البخاري","longitude": 35.876372,"latitude": 2.7147496 },
+{"id": 68,"code": 68,"name": "Boussaada","ar_name": "بوسعادة","longitude": 35.2124568,"latitude": 4.0988984 },
+{"id": 69,"code": 69,"name": "El Abiodh Sidi Cheikh","ar_name": "الأبيض سيدي الشيخ","longitude": 32.7281321,"latitude": 0.317311 }
 ]
